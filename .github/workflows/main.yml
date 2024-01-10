@@ -33,9 +33,9 @@ jobs:
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2
       with:
-        server: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        remote: '${{ secrets.REMOTE_TARGET }}'
-        local: 'dist'
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        TARGET: '${{ secrets.REMOTE_TARGET }}'
+        EXCLUDE: '/node_modules/'
      
