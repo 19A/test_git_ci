@@ -1,0 +1,9 @@
+{
+  "name": "test_git_ci",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "https://github.com/19A/test_git_ci.git",
+  "author": "1967349734@qq.com",
+  "license": "MIT"
+}
