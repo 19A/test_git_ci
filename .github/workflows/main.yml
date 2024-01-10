@@ -20,21 +20,22 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build
-      run: npm run build
+    # - name: Build
+    #   run: npm run build
 
     - name: Print Deployment Information
       run: |
         echo "Deploying to the server..."
-        echo "Server: ${{ secrets.SERVER }}"
-        echo "Username: ${{ secrets.USERNAME }}"
+        echo "Server: ${{ secrets.REMOTE_HOST }}"
+        echo "Username: ${{ secrets.REMOTE_USER }}"
         # Add more log information if needed
 
-    # - name: Deploy to Server
-    #   uses: easingthemes/ssh-deploy@v2
-    #   with:
-    #     server: ${{ secrets.SERVER }}
-    #     username: ${{ secrets.USERNAME }}
-    #     key: ${{ secrets.SSH_KEY }}
-    #     local: 'dist'
-    #     remote: '/var/www/myapp'
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@v2
+      with:
+        server: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        remote: '${{ secrets.REMOTE_TARGET }}'
+        local: 'dist'
+     
