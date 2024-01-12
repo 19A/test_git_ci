@@ -22,3 +22,4 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         source: "./*" # 你要上传的文件或目录
         target: "/GitOffice/19A" # 服务器上的目标路径
+        script: "sudo systemctl restart nginx"
