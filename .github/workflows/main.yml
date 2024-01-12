@@ -25,7 +25,7 @@ jobs:
 
     - name: Print Deployment Information
       run: |
-        echo "Deploying to the server....."
+        echo "Deploying to the server......"
         echo "Server: ${{ secrets.REMOTE_HOST }}"
         echo "Username: ${{ secrets.REMOTE_USER }}"
         # Add more log information if needed
