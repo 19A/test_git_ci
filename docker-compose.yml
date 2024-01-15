@@ -17,7 +17,7 @@ services:
       - ./data/nginx/logs:/var/log/nginx # nginx日志
   server:
     build: "." # 表示以当前目录下的Dockerfile开始构d建镜像
-    image: 19A-server-image #从当前目录下todo-client子目录内找Dockerfile生成image
+    image: 19a-server-image #从当前目录下todo-client子目录内找Dockerfile生成image
     container_name: server
     ports:
       - "3000:8888"
