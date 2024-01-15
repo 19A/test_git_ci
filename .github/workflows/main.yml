@@ -22,6 +22,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           source: "./*" # 你要上传的文件或目录
           target: "/GitOffice/19A" # 服务器上的目标路径
-          #  替换nginx.conf指定root的html路径配置
+          #  sudo systemctl restart nginx
           script: |
-            sudo systemctl restart nginx
+            docker-compose down
+            docker-compose up -d
