@@ -24,5 +24,4 @@ jobs:
           target: "/GitOffice/19A/client" # 服务器上的目标路径
           #  替换nginx.conf指定root的html路径配置
           script: |
-            sudo sed -i 's#GitOffice/19A#GitOffice/19A/client#g' /etc/nginx/nginx.conf
             sudo systemctl restart nginx
